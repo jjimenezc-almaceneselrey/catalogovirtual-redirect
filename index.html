@@ -8,12 +8,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --rojo-rey:      #ff0000;
+      --rojo-rey:        #ff0000;
+      --vino-realeza:    #bc0000;
       --amarillo-corona: #ffcd00;
-      --amarillo-monarca: #ffef00;
-      --vino-realeza:  #bc0000;
-      --cafe-lealtad:  #53301b;
-      --beige-calidez: #ffedd5;
+      --cafe-lealtad:    #53301b;
     }
 
     body {
@@ -22,171 +20,149 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: var(--beige-calidez);
+      background: #ffffff;
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: var(--cafe-lealtad);
+      color: #111;
     }
 
-    /* ── top accent bar ── */
     .top-bar {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 6px;
-      background: linear-gradient(
-        90deg,
-        var(--vino-realeza) 0%,
-        var(--rojo-rey) 35%,
-        var(--amarillo-corona) 65%,
-        var(--amarillo-monarca) 100%
-      );
+      height: 4px;
+      background: var(--rojo-rey);
     }
 
-    .card {
-      max-width: 680px;
+    .container {
+      max-width: 520px;
       width: 92%;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(83, 48, 27, 0.14);
-      overflow: hidden;
       text-align: center;
-    }
-
-    /* ── header band ── */
-    .card-header {
-      background: var(--vino-realeza);
-      padding: 36px 32px 28px;
+      padding: 16px;
     }
 
     .icon-wrapper {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       background: var(--amarillo-corona);
       border-radius: 50%;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      margin-bottom: 24px;
     }
 
     .icon-wrapper svg {
-      width: 38px;
-      height: 38px;
+      width: 32px;
+      height: 32px;
       fill: var(--vino-realeza);
     }
 
-    .card-header h1 {
-      font-size: 1.55rem;
+    h1 {
+      font-size: 1.4rem;
       font-weight: 700;
-      color: var(--beige-calidez);
-      letter-spacing: -0.3px;
-      line-height: 1.25;
+      color: var(--vino-realeza);
+      line-height: 1.3;
+      margin-bottom: 8px;
     }
 
-    .card-header p.subtitle {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--amarillo-corona);
-      opacity: 0.9;
+    .brand {
+      font-size: 0.8rem;
+      color: #888;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
     }
 
-    /* ── divider stripe ── */
-    .stripe {
-      height: 5px;
-      background: linear-gradient(
-        90deg,
-        var(--amarillo-monarca),
-        var(--amarillo-corona)
-      );
-    }
-
-    /* ── body content ── */
-    .card-body {
-      padding: 36px 40px 40px;
+    .divider {
+      width: 40px;
+      height: 3px;
+      background: var(--amarillo-corona);
+      margin: 0 auto 40px;
     }
 
     .message {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--cafe-lealtad);
-      margin-bottom: 28px;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 32px;
     }
 
-    .message strong {
-      color: var(--vino-realeza);
-    }
-
-    /* ── URL box ── */
     .url-box {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--beige-calidez);
-      border: 2px solid var(--amarillo-corona);
-      border-radius: 10px;
-      padding: 14px 22px;
-      margin-bottom: 32px;
-      word-break: break-all;
+      border: 1.5px solid #e5e5e5;
+      border-left: 4px solid var(--rojo-rey);
+      border-radius: 6px;
+      padding: 14px 20px;
+      margin-bottom: 36px;
+      background: #fafafa;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .url-box:hover {
+      background: #f3f3f3;
+      border-color: #d0d0d0;
     }
 
     .url-box svg {
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      fill: var(--rojo-rey);
+      width: 18px;
+      height: 18px;
+      fill: #888;
     }
 
     .url-box span {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 0.97rem;
+      font-weight: 600;
       color: var(--rojo-rey);
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
 
-    /* ── CTA button ── */
+    .copy-hint {
+      font-size: 0.72rem;
+      color: #bbb;
+      margin-top: -24px;
+      margin-bottom: 24px;
+    }
+
+    .copy-hint.copied {
+      color: #2d9e5f;
+    }
+
     .cta-btn {
       display: inline-block;
       text-decoration: none;
       background: var(--rojo-rey);
       color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 15px 38px;
-      border-radius: 50px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 18px rgba(188, 0, 0, 0.35);
-      letter-spacing: 0.4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 13px 34px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+      transition: background 0.15s;
     }
 
     .cta-btn:hover {
       background: var(--vino-realeza);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(188, 0, 0, 0.4);
     }
 
-    .cta-btn:active {
-      transform: translateY(0);
-    }
-
-    /* ── note ── */
     .note {
       margin-top: 28px;
-      font-size: 0.82rem;
-      color: #9a6f50;
+      font-size: 0.78rem;
+      color: #aaa;
     }
 
-    /* ── footer ── */
     footer {
-      margin-top: 28px;
-      font-size: 0.78rem;
-      color: #b08060;
-      text-align: center;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      color: #ccc;
     }
 
     @media (max-width: 480px) {
-      .card-header h1 { font-size: 1.25rem; }
-      .card-body { padding: 28px 24px 32px; }
-      .url-box span { font-size: 0.95rem; }
+      h1 { font-size: 1.2rem; }
+      .url-box span { font-size: 0.88rem; }
     }
   </style>
 </head>
@@ -194,61 +170,68 @@
 
   <div class="top-bar"></div>
 
-  <div class="card">
-    <!-- Header -->
-    <div class="card-header">
-      <div class="icon-wrapper">
-        <!-- camera icon -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0
-            2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9zm3 15a5 5 0 1 1 0-10 5 5 0 0 1
-            0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-        </svg>
-      </div>
-      <h1>Búsqueda a partir de fotografías</h1>
-      <p class="subtitle">Catálogo Virtual · Almacenes El Rey</p>
+  <div class="container">
+
+    <div class="icon-wrapper">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 3L7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0
+          2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9zm3 15a5 5 0 1 1 0-10 5 5 0 0 1
+          0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg>
     </div>
 
-    <div class="stripe"></div>
+    <h1>Búsqueda a partir de fotografías</h1>
+    <p class="brand">Catálogo Virtual · Almacenes El Rey</p>
 
-    <!-- Body -->
-    <div class="card-body">
-      <p class="message">
-        Nuestro servicio de <strong>búsqueda visual por fotografía</strong>
-        se ha trasladado a una nueva dirección. A partir de ahora puedes
-        encontrarlo en:
-      </p>
+    <div class="divider"></div>
 
-      <div class="url-box">
-        <!-- link icon -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 7h-4v2h4c1.65 0 3 1.35 3 3s-1.35 3-3
-            3h-4v2h4c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-6 8H7c-1.65
-            0-3-1.35-3-3s1.35-3 3-3h4V7H7C4.24 7 2 9.24 2 12s2.24
-            5 5 5h4v-2zm1-4H8v2h8v-2z"/>
-        </svg>
-        <span>catalogovirtual.almaceneselrey.com</span>
-      </div>
+    <p class="message">
+      Este servicio tiene una nueva dirección.<br>
+      A partir de ahora encuéntralo en:
+    </p>
 
-      <a
-        class="cta-btn"
-        href="https://catalogovirtual.almaceneselrey.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Ir al nuevo sitio &rarr;
-      </a>
-
-      <p class="note">
-        Si tienes el sitio anterior guardado en tus favoritos, recuerda
-        actualizarlo con la nueva dirección.
-      </p>
+    <div class="url-box" id="urlBox" onclick="copyUrl()" title="Copiar dirección">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 7h-4v2h4c1.65 0 3 1.35 3 3s-1.35 3-3
+          3h-4v2h4c2.76 0 5-2.24 5-5s-2.24-5-5-5zm-6 8H7c-1.65
+          0-3-1.35-3-3s1.35-3 3-3h4V7H7C4.24 7 2 9.24 2 12s2.24
+          5 5 5h4v-2zm1-4H8v2h8v-2z"/>
+      </svg>
+      <span>catalogovirtual.almaceneselrey.com</span>
     </div>
+    <p class="copy-hint" id="copyHint">Haz clic para copiar</p>
+
+    <a
+      class="cta-btn"
+      href="https://catalogovirtual.almaceneselrey.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ir al nuevo sitio &rarr;
+    </a>
+
+    <p class="note">
+      Recuerda actualizar tus favoritos con la nueva dirección.
+    </p>
+
   </div>
 
-  <footer>
-    &copy; 2026 Almacenes El Rey &nbsp;&middot;&nbsp; Catálogo Virtual
-  </footer>
+  <footer>&copy; 2026 Almacenes El Rey</footer>
+
+  <script>
+    function copyUrl() {
+      const url = 'catalogovirtual.almaceneselrey.com';
+      const hint = document.getElementById('copyHint');
+      navigator.clipboard.writeText(url).then(() => {
+        hint.textContent = '¡Copiado!';
+        hint.classList.add('copied');
+        setTimeout(() => {
+          hint.textContent = 'Haz clic para copiar';
+          hint.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
